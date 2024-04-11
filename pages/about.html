@@ -10,7 +10,12 @@
     <script>
         // Fetch and insert navigation HTML
         fetch("navigation.html")
-            .then(response => response.text())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Failed to fetch navigation HTML');
+                }
+                return response.text();
+            })
             .then(data => {
                 document.getElementById("navigation").innerHTML = data;
             })
