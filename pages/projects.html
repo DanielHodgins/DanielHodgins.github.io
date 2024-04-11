@@ -1,1 +1,23 @@
-
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Daniel Hodgins</title>
+</head>
+<body>
+    <nav id="navigation"></nav>
+    <h1>CV</h1>
+    <p>Here is my CV.</p>
+    <script>
+        // Fetch and insert navigation HTML
+        fetch("navigation.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("navigation").innerHTML = data;
+            })
+            .catch(error => {
+                // Gracefully handle errors
+                console.error('Error fetching navigation:', error);
+            });
+    </script>
+</body>
+</html>
