@@ -1,43 +1,80 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Daniel Hodgins</title>
+    <title>Daniel Hodgins - Mathematics</title>
     <link rel="icon" type="image/x-icon" href="/MyFavicon.png">    
     <style>
-        .horizontal-panel {
-            list-style-type: none;
-            padding: 0;
+        body {
+            font-family: Arial, sans-serif;
             margin: 0;
-            text-align: center; /* Center align the buttons */
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+        
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
         }
 
-        .horizontal-panel li {
-            display: inline-block;
-            margin-right: 10px; /* Adjust spacing between buttons as needed */
+        nav {
+            background-color: #444;
+            padding: 10px;
+            text-align: center;
         }
 
-        .horizontal-panel li:last-child {
-            margin-right: 0; /* Remove margin from the last button */
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
         }
 
-        .horizontal-panel li a {
-            display: inline-block;
-            padding: 10px 20px; /* Adjust button padding as needed */
-            background-color: black; /* Set button background color to black */
-            color: white; /* Set text color to white */
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
             text-decoration: none;
-            border-radius: 5px; /* Add rounded corners */
-            transition: background-color 0.3s; /* Add smooth transition */
+            color: #fff;
         }
 
-        .horizontal-panel li a:hover {
-            background-color: #333; /* Darken button background color on hover */
+        nav ul li a:hover {
+            color: #ddd;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .download-cv {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .download-cv a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .download-cv a:hover {
+            background-color: #555;
         }
     </style>
 </head>
 <body>
-        <nav>
-        <ul class="horizontal-panel">
+    <header>
+        <h1>Daniel Hodgins</h1>
+        <p>Mathematics Master's Student</p>
+    </header>
+
+    <nav>
+        <ul>
             <li><a href="/index.html">Home</a></li>
             <li><a href="/pages/about.html">About</a></li>
             <!--<li><a href="/pages/contact.html">Contact</a></li>-->
@@ -51,27 +88,33 @@
             <li><a href="/pages/gallery.html">Gallery</a></li>
         </ul>
     </nav>
-    <h1>Daniel Hodgins</h1>
-    <p>I am a master's student in mathematics at the University of South Alabama, where I earned my undergraduate degree in Mechanical Engineering and Mathematics with a concentration in Aerospace Engineering in 2023. My research interests currently lie in graph theory and combinatorial game theory. Outside of mathematics, I enjoy camping, tabletop games, and swimming.</p>
-    <p>Click the link below to download my CV as a PDF:</p>
-    <a href="/files/CV___Daniel.pdf">Download PDF</a>
-    <h2>Current Teaching (Spring 2024)</h2>
-    <h3>TA for MA125-102:</h3>
-    <ul>
-        <li>Time: 9:30 am - 10:20 am</li>
-        <li>Location: MSPB 345</li>
-    </ul>
 
-    <h3>TA for MA125-103:</h3>
-    <ul>
-        <li>Time: 11:00 am - 11:50 am</li>
-        <li>Location: MSPB 345</li>
-    </ul>
+    <div class="content">
+        <p>I am a master's student in mathematics at the University of South Alabama, where I earned my undergraduate degree in Mechanical Engineering and Mathematics with a concentration in Aerospace Engineering in 2023. My research interests currently lie in graph theory and combinatorial game theory. Outside of mathematics, I enjoy camping, tabletop games, and swimming.</p>
 
-    <h2>Office Hours:</h2>
-    <ul>
-        <li>Tuesday: 11:50 am - 2:50 pm</li>
-        <li>Wednesday: 1:00 pm - 4:00 pm</li>
-    </ul>
+        <div class="download-cv">
+            <p>Click the link below to download my CV as a PDF:</p>
+            <a href="/files/CV___Daniel.pdf">Download PDF</a>
+        </div>
+
+        <h2>Current Teaching (Spring 2024)</h2>
+        <h3>TA for MA125-102:</h3>
+        <ul>
+            <li>Time: 9:30 am - 10:20 am</li>
+            <li>Location: MSPB 345</li>
+        </ul>
+
+        <h3>TA for MA125-103:</h3>
+        <ul>
+            <li>Time: 11:00 am - 11:50 am</li>
+            <li>Location: MSPB 345</li>
+        </ul>
+
+        <h2>Office Hours:</h2>
+        <ul>
+            <li>Tuesday: 11:50 am - 2:50 pm</li>
+            <li>Wednesday: 1:00 pm - 4:00 pm</li>
+        </ul>
+    </div>
 </body>
 </html>
