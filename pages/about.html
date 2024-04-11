@@ -4,7 +4,17 @@
     <title>Daniel Hodgins</title>
 </head>
 <body>
+    <nav id="navigation"></nav>
     <h1>About</h1>
     <p>This is my personal website. Here you will find my CV, projects that I have done, my research, and more.</p>
+    <script>
+        // Fetch and insert navigation HTML
+        fetch("navigation.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("navigation").innerHTML = data;
+            })
+            .catch(error => console.error('Error fetching navigation:', error));
+    </script>
 </body>
 </html>
