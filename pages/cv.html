@@ -2,6 +2,37 @@
 <html>
 <head>
     <title>Daniel Hodgins</title>
+        <style>
+        .horizontal-panel {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            text-align: center; /* Center align the buttons */
+        }
+
+        .horizontal-panel li {
+            display: inline-block;
+            margin-right: 10px; /* Adjust spacing between buttons as needed */
+        }
+
+        .horizontal-panel li:last-child {
+            margin-right: 0; /* Remove margin from the last button */
+        }
+
+        .horizontal-panel li a {
+            display: inline-block;
+            padding: 10px 20px; /* Adjust button padding as needed */
+            background-color: black; /* Set button background color to black */
+            color: white; /* Set text color to white */
+            text-decoration: none;
+            border-radius: 5px; /* Add rounded corners */
+            transition: background-color 0.3s; /* Add smooth transition */
+        }
+
+        .horizontal-panel li a:hover {
+            background-color: #333; /* Darken button background color on hover */
+        }
+    </style>
 </head>
 <body>
     <nav>
