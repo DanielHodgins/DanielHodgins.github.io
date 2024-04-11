@@ -9,7 +9,7 @@
     <p>This is my personal website. Here you will find my CV, projects that I have done, my research, and more.</p>
     <script>
         // Fetch and insert navigation HTML
-        fetch("../../navigation.html") // Adjust the path to navigate up two levels
+        fetch("../navigation.html") // Adjust the path to navigate up one level
             .then(response => response.text())
             .then(data => {
                 document.getElementById("navigation").innerHTML = data;
