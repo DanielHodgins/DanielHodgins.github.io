@@ -9,13 +9,8 @@
     <p>This is my personal website. Here you will find my CV, projects that I have done, my research, and more.</p>
     <script>
         // Fetch and insert navigation HTML
-        fetch("navigation.html")
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Failed to fetch navigation HTML');
-                }
-                return response.text();
-            })
+        fetch("../navigation.html") // Adjust the path to navigate up one level
+            .then(response => response.text())
             .then(data => {
                 document.getElementById("navigation").innerHTML = data;
             })
