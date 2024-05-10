@@ -17,7 +17,7 @@ header {
     position: absolute; /* Positioning the favicon */
     top: 0px; /* Adjust as needed */
     left: 0px; /* Adjust as needed */
-    width: 32px; /* Adjust as needed */
+    width: 20px; /* Adjust as needed */
     height: auto; /* Maintain aspect ratio */
 }
 
