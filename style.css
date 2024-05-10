@@ -13,6 +13,13 @@ header {
     text-align: center;
 }
 
+.favicon {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 64px; /* Adjust as needed */
+    height: 64; /* Maintain aspect ratio */
+}
 
 
 
