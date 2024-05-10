@@ -6,11 +6,19 @@ body {
 }
 
 header {
+    position: relative; /* Ensure positioning context */
     background-color: #333;
     color: #fff;
     padding: 20px;
     text-align: center;
 }
+
+.favicon {
+    position: absolute; /* Positioning the favicon */
+    top: 10px; /* Adjust as needed */
+    left: 10px; /* Adjust as needed */
+}
+
 
 nav {
     background-color: #444;
