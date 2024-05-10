@@ -14,12 +14,13 @@ header {
 }
 
 .favicon {
-    position: absolute; /* Positioning the favicon */
-    top: 1000px; /* Adjust as needed */
-    left: 10px; /* Adjust as needed */
-    width: 1280px; /* Adjust as needed */
-    height: auto;  /*Maintain aspect ratio */
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 32px; /* Adjust as needed */
+    height: auto; /* Maintain aspect ratio */
 }
+
 
 
 nav {
