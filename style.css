@@ -9,7 +9,7 @@ header {
     position: relative; /* Ensure positioning context */
     background-color: #333;
     color: #fff;
-    padding: 32px;
+    padding: 20px;
     text-align: center;
 }
 
@@ -17,6 +17,8 @@ header {
     position: absolute; /* Positioning the favicon */
     top: 0px; /* Adjust as needed */
     left: 0px; /* Adjust as needed */
+    width: 32px; /* Adjust as needed */
+    height: auto; /* Maintain aspect ratio */
 }
 
 
