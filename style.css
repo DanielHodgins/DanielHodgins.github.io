@@ -17,8 +17,8 @@ header {
     position: absolute;
     top: 10px;
     left: 10px;
-    width: 64px; /* Adjust as needed */
-    height: 64; /* Maintain aspect ratio */
+    width: 128px; /* Adjust as needed */
+    height: 128px; /* Maintain aspect ratio */
 }
 
 
