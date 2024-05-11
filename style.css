@@ -54,6 +54,8 @@ nav ul li a:hover {
 .content {
     padding: 20px;
     text-align: left;
+    font-family: "Times New Roman", Times, serif; /* Use Times New Roman */
+    background-color: #f0f0f0;
 }
 
 
