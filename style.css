@@ -69,7 +69,7 @@ nav ul li a:hover {
     text-align: justify;
     overflow: hidden;
     margin: auto;
-    margin-bottom: 50px; /* Add more space after the about-me section */
+    margin-bottom: 250px; /* Add more space after the about-me section */
 }
 
 .download-cv {
