@@ -100,7 +100,9 @@ nav ul li a:hover {
     margin-right: 0; /* Remove right margin from last item */
 }
 
-
+.content {
+    min-height: calc(100vh - (header height + footer height)); /* Adjust as needed */
+}
 
 /* Center bullets */
 ul {
