@@ -54,7 +54,7 @@ nav ul li a:hover {
 .content {
     padding: 20px;
     text-align: left;
-    min-height: calc(100vh - 120px); /* Adjust as needed */
+    min-height: calc(100vh - 100px); /* Adjust as needed */
 }
 
 
