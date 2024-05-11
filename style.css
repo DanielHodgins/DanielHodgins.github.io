@@ -101,7 +101,7 @@ nav ul li a:hover {
 }
 
 .content {
-    min-height: calc(100vh - (header height + footer height)); /* Adjust as needed */
+    min-height: calc(100vh - (120px)); /* Adjust as needed */
 }
 
 /* Center bullets */
