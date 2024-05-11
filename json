@@ -1,0 +1,16 @@
+document.addEventListener("DOMContentLoaded", function() {
+    var coll = document.getElementsByClassName("collapsible")[0]; // Get the first button
+    var image = document.getElementById("collapsible-image");
+
+    coll.addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+            content.style.display = "none";
+            image.style.display = "none"; // Hide the image when collapsing
+        } else {
+            content.style.display = "block";
+            image.style.display = "block"; // Show the image when expanding
+        }
+    });
+});
