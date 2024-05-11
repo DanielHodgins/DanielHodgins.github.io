@@ -85,6 +85,21 @@ nav ul li a:hover {
     background-color: #555;
 }
 
+.list-inline.social {
+    padding: 0;
+    list-style: none;
+}
+
+.list-inline.social li {
+    display: inline-block;
+    margin-right: 10px; /* Adjust as needed */
+}
+
+.list-inline.social li:last-child {
+    margin-right: 0; /* Remove right margin from last item */
+}
+
+
 /* Center bullets */
 ul {
     text-align: left;
