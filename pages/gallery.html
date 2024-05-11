@@ -4,9 +4,56 @@ title: Gallery
 ---
 <!DOCTYPE html>
 <html>
-<body>
-    
+<head>
+    <title>{{ page.title }}</title>
+    <!-- Add your CSS styles here -->
+    <style>
+        .collapsible {
+            background-color: #333;
+            color: white;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+        }
 
+        .active, .collapsible:hover {
+            background-color: #555;
+        }
+
+        .content {
+            display: none;
+            padding: 0 18px;
+            overflow: hidden;
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+
+
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var coll = document.getElementsByClassName("collapsible")[0];
+            var image = document.getElementById("collapsible-image");
+
+            coll.addEventListener("click", function() {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                    image.style.display = "none"; // Hide the image when collapsing
+                } else {
+                    content.style.display = "block";
+                    image.style.display = "block"; // Show the image when expanding
+                }
+            });
+        });
+    </script>
     <h1>CV</h1>
     <p>Below are images that I have created.</p>
 <button class="collapsible">Toggle Images</button>
@@ -16,7 +63,5 @@ title: Gallery
     <!--<img src="image2.jpg" alt="Image 2">-->
     <!-- Add more images here -->
 </div>
-
 </body>
 </html>
-
