@@ -60,17 +60,21 @@ nav ul li a:hover {
 
 
 
+.about-container {
+    margin-bottom: 50px; /* Add more space after the about-me section */
+}
+
 .about-me {
     width: 750px;
     background-color: #fff;
     padding: 20px;
-    border-radius: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5); /* Increased spread radius and adjusted transparency */
     text-align: justify;
     overflow: hidden;
     margin: auto;
-    margin-bottom: 250px; /* Add more space after the about-me section */
 }
+
 
 .download-cv {
     margin-top: 20px;
