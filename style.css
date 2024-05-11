@@ -94,7 +94,9 @@ nav ul li a:hover {
 .download-cv a:hover {
     background-color: #555;
 }
-
+.download-cv a[target="_blank"] {
+    /* Optional: Add any additional styling here */
+}
 .list-inline.social {
     padding: 0;
     list-style: none;
