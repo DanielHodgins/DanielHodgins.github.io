@@ -54,7 +54,9 @@ nav ul li a:hover {
 .content {
     padding: 20px;
     text-align: left;
+    min-height: calc(100vh - 120px); /* Adjust as needed */
 }
+
 
 .about-me {
     width: 750px;
@@ -100,9 +102,6 @@ nav ul li a:hover {
     margin-right: 0; /* Remove right margin from last item */
 }
 
-.content {
-    min-height: calc(100vh - (120px)); /* Adjust as needed */
-}
 
 /* Center bullets */
 ul {
