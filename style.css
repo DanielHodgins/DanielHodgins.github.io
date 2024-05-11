@@ -59,12 +59,7 @@ nav ul li a:hover {
 }
 
 
-
-.about-container {
-    margin-bottom: 50px; /* Add more space after the about-me section */
-}
-
-.about-me {
+.bubble {
     width: 750px;
     background-color: #fff;
     padding: 20px;
