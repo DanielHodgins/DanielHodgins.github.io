@@ -4,28 +4,6 @@ title: Gallery
 ---
 <!DOCTYPE html>
 <html>
-<script type="application/json" id="myData">
-    {
-        document.addEventListener("DOMContentLoaded", function() {
-    var coll = document.getElementsByClassName("collapsible");
-    var i;
-
-    for (i = 0; i < coll.length; i++) {
-        coll[i].addEventListener("click", function() {
-            this.classList.toggle("active");
-            var content = this.nextElementSibling;
-            if (content.style.display === "block") {
-                content.style.display = "none";
-            } else {
-                content.style.display = "block";
-            }
-        });
-    }
-});
-
-    }
-</script>
-
 <body>
     
 
@@ -33,11 +11,12 @@ title: Gallery
     <p>Below are images that I have created.</p>
 <button class="collapsible">Toggle Images</button>
 <div class="content">
-     <img src="/images/Level9.png" alt="Level 9 Tree">
+     <img id="collapsible-image" src="/images/Level9.png" alt="Level 9 Tree">
     Howdy Howdy
     <!--<img src="image2.jpg" alt="Image 2">-->
     <!-- Add more images here -->
 </div>
+
 </body>
 </html>
 
