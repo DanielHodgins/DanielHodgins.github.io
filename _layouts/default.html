@@ -81,54 +81,52 @@
     </div>
 <footer>
     <script>
-        // Function to roll a d4
-        function rollD4() {
-            return Math.floor(Math.random() * 4) + 1;
-        }
+           return Math.floor(Math.random() * 4) + 1;
+}
 
-        // Function to roll a d8
-        function rollD8() {
-            return Math.floor(Math.random() * 8) + 1;
-        }
+// Function to roll a d8
+function rollD8() {
+    return Math.floor(Math.random() * 8) + 1;
+}
 
-        // Function to roll a d10
-        function rollD10() {
-            return Math.floor(Math.random() * 10) + 1;
-        }
+// Function to roll a d10
+function rollD10() {
+    return Math.floor(Math.random() * 10) + 1;
+}
 
-        // Function to roll a d12
-        function rollD12() {
-            return Math.floor(Math.random() * 12) + 1;
-        }
+// Function to roll a d12
+function rollD12() {
+    return Math.floor(Math.random() * 12) + 1;
+}
 
-        // Function to roll a d20
-        function rollD20() {
-            return Math.floor(Math.random() * 20) + 1;
-        }
+// Function to roll a d20
+function rollD20() {
+    return Math.floor(Math.random() * 20) + 1;
+}
 
-        // Function to generate random dice roll
-        function generateRandomDiceRoll() {
-            var d4rollResult =
-                "d4: " + rollD4();
-            var d8rollResult =
-                "d8: " + rollD8();
-            var d10rollResult =
-                "d10: " + rollD10();
-            var d12rollResult =
-                "d12: " + rollD12();
-            var d20rollResult =
-                "d20: " + rollD20();
-            return d4rollResult + d8rollResult + d10rollResult + d12rollResult + d20rollResult;
-        }
+// Function to generate random dice roll
+function generateRandomDiceRoll() {
+    var d4rollResult =
+        "d4: " + rollD4();
+    var d8rollResult =
+        "d8: " + rollD8();
+    var d10rollResult =
+        "d10: " + rollD10();
+    var d12rollResult =
+        "d12: " + rollD12();
+    var d20rollResult =
+        "d20: " + rollD20();
+    return d4rollResult + "<br>" + d8rollResult + "<br>" + d10rollResult + "<br>" + d12rollResult + "<br>" + d20rollResult;
+}
 
-        // Function to display random dice roll
-        function displayRandomDiceRoll() {
-            var rollElement = document.getElementById("roll-result");
-            rollElement.textContent = generateRandomDiceRoll();
-        }
+// Function to display random dice roll
+function displayRandomDiceRoll() {
+    var rollElement = document.getElementById("roll-result");
+    rollElement.innerHTML = generateRandomDiceRoll();
+}
 
-        // Display a random dice roll when the page loads
-        window.onload = displayRandomDiceRoll;
+// Display a random dice roll when the page loads
+window.onload = displayRandomDiceRoll;
     </script>
     
 </body>
