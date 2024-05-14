@@ -77,7 +77,7 @@
     -->
 	
 	<div id="quote-container">
-        <p Dice Roll: id="quote-text"></p>
+        <p id="quote-text"></p>
     </div>
     </footer>
 <script>
@@ -110,7 +110,7 @@
         function generateRandomQuote() {
             var randomNumber = Math.floor(Math.random() * quotes.length);
             var randomQuote = quotes[randomNumber];
-            return randomQuote;
+            return "Dice Roll:" + randomQuote;
         }
 
         // Function to display random quote
