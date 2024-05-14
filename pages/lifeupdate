@@ -1,0 +1,57 @@
+---
+layout: default
+title: Life Updates
+---
+<!DOCTYPE html>
+<html>
+<body>
+<!--
+<div class="about-me">
+        <h1>Summer 2025</h1>
+        <p></p>
+    </div>
+<div class="about-me">
+        <h1>Spring 2025</h1>
+        <p></p>
+    </div>
+<div class="about-me">
+        <h1>Winter 2024-2025</h1>
+        <p></p>
+    </div>
+<div class="about-me">
+        <h1>Fall 2024</h1>
+        <p></p>
+    </div>
+-->
+<style>
+    /* Hide the checkbox */
+    #toggle {
+      display: none;
+    }
+
+    /* Style the label to look like a box */
+    #toggle + label {
+      cursor: pointer;
+      border: 1px solid #ccc;
+      padding: 5px;
+      display: inline-block;
+    }
+
+    /* Style the GPA text */
+    #toggle:checked + label + span {
+      visibility: visible;
+    }
+
+    /* Hide the GPA text initially */
+    span {
+      visibility: hidden;
+    }
+  </style>
+    <div class="about-me">
+        <h1>Summer 2024</h1>
+        <p>I graduated with a Master of Science in Mathematics this May in which I obtained a GPA of [insert drum roll] <input type="checkbox" id="toggle">
+            <label for="toggle">Click to reveal GPA</label>
+            <span>4.0</span> overall.</p>
+    </div>
+</body>
+</html>
