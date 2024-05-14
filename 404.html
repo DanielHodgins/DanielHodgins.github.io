@@ -6,37 +6,9 @@ title: 404
 <html>
 
 <body>
-        <div id="quote-container">
-        <p id="quote-text"></p>
-    </div>
     I am sorry.
 
     It appears that you are trying to access a page which does not exist.
 
-        <script>
-        // List of quotes
-        var quotes = [
-            "Quote 1",
-            "Quote 2",
-            "Quote 3",
-            // Add more quotes here
-        ];
-
-        // Function to generate random quote
-        function generateRandomQuote() {
-            var randomNumber = Math.floor(Math.random() * quotes.length);
-            var randomQuote = quotes[randomNumber];
-            return randomQuote;
-        }
-
-        // Function to display random quote
-        function displayRandomQuote() {
-            var quoteElement = document.getElementById("quote-text");
-            quoteElement.textContent = generateRandomQuote();
-        }
-
-        // Display a random quote when the page loads
-        window.onload = displayRandomQuote;
-    </script>
 </body>
 </html>
