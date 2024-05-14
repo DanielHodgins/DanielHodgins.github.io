@@ -108,13 +108,17 @@
 
         // Function to generate random dice roll
         function generateRandomDiceRoll() {
-            var rollResult =
-                "d4: " + rollD4() + <br> +
-                "d8: " + rollD8() + <br> +
-                "d10: " + rollD10() + <br> +
-                "d12: " + rollD12() + <br> +
+            var d4rollResult =
+                "d4: " + rollD4();
+            var d8rollResult =
+                "d8: " + rollD8();
+            var d10rollResult =
+                "d10: " + rollD10();
+            var d12rollResult =
+                "d12: " + rollD12();
+            var d20rollResult =
                 "d20: " + rollD20();
-            return rollResult;
+            return d4rollResult,d8rollResult,d10rollResult,d12rollResult,d20rollResult;
         }
 
         // Function to display random dice roll
