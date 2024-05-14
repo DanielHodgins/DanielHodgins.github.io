@@ -114,3 +114,9 @@ ul li {
     text-align: left;
 }
 
+
+
+#roll-result {
+    white-space: pre-line; /* Preserve line breaks */
+}
+
