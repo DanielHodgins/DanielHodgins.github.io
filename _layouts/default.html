@@ -76,81 +76,36 @@
         <img src="/images/QR_Codes/{{ page_name }}_QR.png" alt="{{ page_name }} QR Code">
     -->
 	
-    <div id="roll-container">
-        <p id="d4roll-result">d4: </p>
-        <br>
-        <p id="d8roll-result">d8: </p>
-        <br>
-        <p id="d10roll-result">d10: </p>
-        <br>
-        <p id="d12roll-result">d12: </p>
-        <br>
-        <p id="d20roll-result">d20: </p>
-    </div>
+    <div id="roll-container"></div>
+
 
     <script>
-        // Function to roll a d4
-        function rollD4() {
-            return Math.floor(Math.random() * 4) + 1;
-        }
+        // Function to roll a die with specified sides
+function rollDie(sides) {
+    return Math.floor(Math.random() * sides) + 1;
+}
 
-        // Function to roll a d8
-        function rollD8() {
-            return Math.floor(Math.random() * 8) + 1;
-        }
+// Function to generate random dice roll
+function generateRandomDiceRoll(dieType) {
+    var result = dieType + ": " + rollDie(dieType.slice(1));
+    return result;
+}
 
-        // Function to roll a d10
-        function rollD10() {
-            return Math.floor(Math.random() * 10) + 1;
-        }
+// Function to display random dice rolls
+function displayRandomDiceRolls() {
+    var rollTypes = ["d4", "d8", "d10", "d12", "d20"];
+    var rollContainer = document.getElementById("roll-container");
+    rollTypes.forEach(function(type) {
+        var rollResult = generateRandomDiceRoll(type);
+        var p = document.createElement("p");
+        p.textContent = rollResult;
+        rollContainer.appendChild(p);
+    });
+}
 
-        // Function to roll a d12
-        function rollD12() {
-            return Math.floor(Math.random() * 12) + 1;
-        }
+// Display random dice rolls when the page loads
+window.onload = displayRandomDiceRolls;
 
-        // Function to roll a d20
-        function rollD20() {
-            return Math.floor(Math.random() * 20) + 1;
-        }
-
-        // Function to generate random dice roll
-        function fourgenerateRandomDiceRoll() {
-            var d4rollResult = "d4: " + rollD4();
-            return d4rollResult;
-        }
-                // Function to generate random dice roll
-                function eightgenerateRandomDiceRoll() {
-                    var d8rollResult = "d8: " + rollD8();
-                    return d8rollResult;
-        }
-                // Function to generate random dice roll
-                function tengenerateRandomDiceRoll() {
-                    var d10rollResult = "d10: " + rollD10();
-                    return d10rollResult;
-        }
-                // Function to generate random dice roll
-                function twelvegenerateRandomDiceRoll() {
-                    var d12rollResult = "d12: " + rollD12();
-                    return d12rollResult;
-        }
-                // Function to generate random dice roll
-                function twentygenerateRandomDiceRoll() {
-                    var d20rollResult = "d20: " + rollD20();
-                    return d20rollResult;
-        }
-
-        // Function to display random dice roll
-        function displayRandomDiceRolls() {
-            document.getElementById("d4roll-result").textContent = fourgenerateRandomDiceRoll();
-            document.getElementById("d8roll-result").textContent = eightgenerateRandomDiceRoll();
-            document.getElementById("d10roll-result").textContent = tengenerateRandomDiceRoll();
-            document.getElementById("d12roll-result").textContent = twelvegenerateRandomDiceRoll();
-            document.getElementById("d20roll-result").textContent = twentygenerateRandomDiceRoll();
-        }
-
-        // Display random dice rolls when the page loads
-        window.onload = displayRandomDiceRolls;
     </script>
     
 </body>
