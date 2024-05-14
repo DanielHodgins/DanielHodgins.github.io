@@ -116,7 +116,7 @@ ul li {
 
 
 
-#roll-result {
+.roll-result {
     white-space: pre-line; /* Preserve line breaks */
 }
 
