@@ -24,29 +24,34 @@ title: Life Updates
     </div>
 -->
 <style>
-    /* Hide the checkbox */
-    #toggle {
-      display: none;
-    }
+  /* Hide the checkbox */
+  #toggle {
+    display: none;
+  }
 
-    /* Style the label to look like a box */
-    #toggle + label {
-      cursor: pointer;
-      border: 1px solid #ccc;
-      padding: 5px;
-      display: inline-block;
-    }
+  /* Style the label to look like a box */
+  #toggle + label {
+    cursor: pointer;
+    border: 1px solid #ccc;
+    padding: 5px;
+    display: inline-block;
+  }
 
-    /* Style the GPA text */
-    #toggle:checked + label + span {
-      visibility: visible;
-    }
+  /* Hide the GPA text initially */
+  span {
+    visibility: hidden;
+  }
 
-    /* Hide the GPA text initially */
-    span {
-      visibility: hidden;
-    }
-  </style>
+  /* Show the GPA text when checkbox is checked */
+  #toggle:checked + label + span {
+    visibility: visible;
+  }
+
+  /* Hide the label when checkbox is checked */
+  #toggle:checked + label {
+    display: none;
+  }
+</style>
     <div class="about-me">
         <h1>Summer 2024</h1>
         <p>I graduated with a Master of Science in Mathematics this May in which I obtained a GPA of [insert drum roll] <input type="checkbox" id="toggle">
