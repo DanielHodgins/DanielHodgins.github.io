@@ -75,6 +75,52 @@
      <!--   {% assign page_name = page.path | split: "/" | last | split: "." | first %}
         <img src="/images/QR_Codes/{{ page_name }}_QR.png" alt="{{ page_name }} QR Code">
     -->
+	
+	<div id="quote-container">
+        <p Dice Roll: id="quote-text"></p>
+    </div>
     </footer>
+<script>
+        // List of quotes
+        var quotes = [
+            "1",
+            "2",
+            "3",
+	    "4",
+	    "5",
+	    "6",
+	    "7",
+	    "8",
+	    "9",
+	    "10",
+	    "11",
+	    "12",
+	    "13",
+	    "14",
+	    "15",
+	    "16",
+	    "17",
+	    "18",
+    	    "19",
+	    "20",
+            // Add more quotes here
+        ];
+
+        // Function to generate random quote
+        function generateRandomQuote() {
+            var randomNumber = Math.floor(Math.random() * quotes.length);
+            var randomQuote = quotes[randomNumber];
+            return randomQuote;
+        }
+
+        // Function to display random quote
+        function displayRandomQuote() {
+            var quoteElement = document.getElementById("quote-text");
+            quoteElement.textContent = generateRandomQuote();
+        }
+
+        // Display a random quote when the page loads
+        window.onload = displayRandomQuote;
+    </script>
 </body>
 </html>
