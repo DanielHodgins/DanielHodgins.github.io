@@ -122,9 +122,9 @@ function generateRandomDiceRoll() {
 // Function to display random dice roll
 function displayRandomDiceRoll() {
     var rollElement = document.getElementById("roll-result");
-    rollElement.innerHTML = generateRandomDiceRoll();
+    var rollResult = generateRandomDiceRoll();
+    rollElement.innerHTML = rollResult.replace(/\n/g, "<br>"); // Replace newline characters with line breaks
 }
-
 // Display a random dice roll when the page loads
 window.onload = displayRandomDiceRoll;
     </script>
