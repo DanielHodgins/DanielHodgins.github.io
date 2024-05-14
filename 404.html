@@ -8,11 +8,31 @@ title: 404
 <body>
     <p>I am sorry.</p>
     <p>It appears that you are trying to access a page which does not exist.</p>
-    <div id="roll-container">
+<div id="roll-container">
         <p id="roll-result"></p>
     </div>
 
     <script>
+        // Function to roll a d4
+        function rollD4() {
+            return Math.floor(Math.random() * 4) + 1;
+        }
+
+        // Function to roll a d8
+        function rollD8() {
+            return Math.floor(Math.random() * 8) + 1;
+        }
+
+        // Function to roll a d10
+        function rollD10() {
+            return Math.floor(Math.random() * 10) + 1;
+        }
+
+        // Function to roll a d12
+        function rollD12() {
+            return Math.floor(Math.random() * 12) + 1;
+        }
+
         // Function to roll a d20
         function rollD20() {
             return Math.floor(Math.random() * 20) + 1;
@@ -20,7 +40,12 @@ title: 404
 
         // Function to generate random dice roll
         function generateRandomDiceRoll() {
-            var rollResult = "d20: " + rollD20();
+            var rollResult =
+                "d4: " + rollD4() + ", " +
+                "d8: " + rollD8() + ", " +
+                "d10: " + rollD10() + ", " +
+                "d12: " + rollD12() + ", " +
+                "d20: " + rollD20();
             return rollResult;
         }
 
