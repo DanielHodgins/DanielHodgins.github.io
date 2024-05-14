@@ -13,8 +13,7 @@ title: 404
             <p id="roll-result"></p>
         </div>
 
-
-    <script>
+<script>
         // Function to roll a d4
         function rollD4() {
             return Math.floor(Math.random() * 4) + 1;
@@ -42,25 +41,12 @@ title: 404
 
         // Function to generate random dice roll
         function generateRandomDiceRoll() {
-            var randomNumber = Math.floor(Math.random() * 5); // Random number between 0 and 4
-            var rollResult;
-            switch (randomNumber) {
-                case 0:
-                    rollResult = "d4: " + rollD4();
-                    break;
-                case 1:
-                    rollResult = "d8: " + rollD8();
-                    break;
-                case 2:
-                    rollResult = "d10: " + rollD10();
-                    break;
-                case 3:
-                    rollResult = "d12: " + rollD12();
-                    break;
-                case 4:
-                    rollResult = "d20: " + rollD20();
-                    break;
-            }
+            var rollResult =
+                "d4: " + rollD4() + ", " +
+                "d8: " + rollD8() + ", " +
+                "d10: " + rollD10() + ", " +
+                "d12: " + rollD12() + ", " +
+                "d20: " + rollD20();
             return rollResult;
         }
 
