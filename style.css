@@ -60,7 +60,7 @@ nav ul li a:hover {
 
 
 .about-me {
-    width: 99%;
+    width: 90% !important; /* Forcefully set width to 90% of the screen width */
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
@@ -69,7 +69,6 @@ nav ul li a:hover {
     overflow: hidden;
     margin: auto;
 }
-
 
 .download-cv {
     margin-top: 20px;
