@@ -79,7 +79,19 @@
     </style>
     <span class="center-aligned" style="display: inline-block; width: 100%;">
         Dice Rolls:
-        <div id="roll-container"></div>
+        <div id="roll-container">
+            <table id="roll-table" border="1" style="width: 50%; margin: auto; text-align: center;">
+                <thead>
+                    <tr>
+                        <th>Dice Type</th>
+                        <th>Roll Result</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Dice roll results will be inserted here -->
+                </tbody>
+            </table>
+        </div>
     </span>
     
 </ul>	
@@ -97,8 +109,8 @@ function rollDie(sides) {
 
 // Function to generate random dice roll
 function generateRandomDiceRoll(dieType) {
-    var result = dieType + ": " + rollDie(dieType.slice(1));
-    return result;
+    var result = rollDie(dieType.slice(1));
+    return [dieType, result];
 }
 
 // Function to display random dice rolls
@@ -106,11 +118,13 @@ function displayRandomDiceRolls() {
     var rollTypes = ["d4", "d8", "d10", "d12", "d20"];
     var rollContainer = document.getElementById("roll-container");
     rollTypes.forEach(function(type) {
-        var rollResult = generateRandomDiceRoll(type);
-        var p = document.createElement("p");
-        p.textContent = rollResult;
-        rollContainer.appendChild(p);
-    });
+                var rollResult = generateRandomDiceRoll(type);
+                var row = rollTableBody.insertRow();
+                var cell1 = row.insertCell(0);
+                var cell2 = row.insertCell(1);
+                cell1.textContent = rollResult[0];
+                cell2.textContent = rollResult[1];
+            });
 }
 
 // Display random dice rolls when the page loads
