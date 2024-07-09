@@ -70,6 +70,16 @@ nav ul li a:hover {
     margin: auto;
 }
 
+.navcloud {
+    background-color: #111;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5); /* Increased spread radius and adjusted transparency */
+    text-align: justify;
+    overflow: hidden;
+    margin: auto;
+}
+
 .download-cv {
     margin-top: 20px;
     text-align: justify;
