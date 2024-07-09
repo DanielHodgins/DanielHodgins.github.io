@@ -72,7 +72,7 @@ nav ul li a:hover {
 }
 
 .navcloud {
-    width: fit-content; /* Ensures it wraps around the content */
+    width: fit-content*1.1; /* Ensures it wraps around the content */
     padding: 10px; /* Adjust padding as needed */
     border-radius: 50%; /* Makes it round */
     background-color: #111; /* Matches the nav background */
