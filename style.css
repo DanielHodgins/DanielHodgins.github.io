@@ -26,6 +26,7 @@ footer {
 
 nav {
     position: relative; /* Ensure positioning context */
+    height:5%;
     background-color: #444;
     padding: 10px;
     text-align: center;
