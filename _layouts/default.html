@@ -115,11 +115,11 @@ function generateRandomDiceRoll(dieType) {
 
 // Function to display random dice rolls
 function displayRandomDiceRolls() {
-    var rollTypes = ["d4", "d8", "d10", "d12", "d20"];
-    var rollContainer = document.getElementById("roll-container");
-    rollTypes.forEach(function(type) {
+            var rollTypes = ["d4", "d8", "d10", "d12", "d20"];
+            var rollTableBody = document.getElementById("roll-table").getElementsByTagName("tbody")[0];
+            rollTypes.forEach(function(type) {
                 var rollResult = generateRandomDiceRoll(type);
-                var row = rollContainer.insertRow();
+                var row = rollTableBody.insertRow();
                 var cell1 = row.insertCell(0);
                 var cell2 = row.insertCell(1);
                 cell1.textContent = rollResult[0];
