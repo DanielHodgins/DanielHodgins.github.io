@@ -72,13 +72,13 @@ nav ul li a:hover {
 }
 
 .navcloud {
-    height: auto;
+    height: 20px;
     width: 128px;
     background-color: #111;
     border-radius: 20px;
     text-align: justify;
     overflow: hidden;
-    margin: auto;
+    margin: 5px;
 }
 
 .download-cv {
