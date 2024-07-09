@@ -119,7 +119,7 @@ function displayRandomDiceRolls() {
     var rollContainer = document.getElementById("roll-container");
     rollTypes.forEach(function(type) {
                 var rollResult = generateRandomDiceRoll(type);
-                var row = rollTableBody.insertRow();
+                var row = rollContainer.insertRow();
                 var cell1 = row.insertCell(0);
                 var cell2 = row.insertCell(1);
                 cell1.textContent = rollResult[0];
