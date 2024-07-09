@@ -72,11 +72,11 @@ nav ul li a:hover {
 }
 
 .navcloud {
-    height: 80%;
-    background-color: #111;
-    border-radius: 20px;
-    text-align: justify;
-    overflow: hidden;
+    width: fit-content; /* Ensures it wraps around the content */
+    padding: 10px; /* Adjust padding as needed */
+    border-radius: 50%; /* Makes it round */
+    background-color: #111; /* Matches the nav background */
+    display: inline-block; /* Allows it to wrap around content */
 }
 
 .download-cv {
