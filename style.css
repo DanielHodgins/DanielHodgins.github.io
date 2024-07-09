@@ -73,7 +73,6 @@ nav ul li a:hover {
 .navcloud {
     width: 128px;
     background-color: #111;
-    padding: 10px;
     border-radius: 20px;
     text-align: justify;
     overflow: hidden;
