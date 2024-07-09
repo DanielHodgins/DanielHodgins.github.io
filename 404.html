@@ -5,58 +5,9 @@ title: 404
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-#div1 {
-  width: 250px;
-  height: 250px;
-  padding: 10px;
-  border: 5px solid #aaaaaa;
-}
-</style>
-<script>
-function allowDrop(ev) {
-  ev.preventDefault();
-}
-
-function drag(ev) {
-  ev.dataTransfer.setData("text", ev.target.id);
-}
-
-function drop(ev) {
-  ev.preventDefault();
-  var data = ev.dataTransfer.getData("text");
-  ev.target.appendChild(document.getElementById(data));
-}
-
-
-function clickCounter() {
-  if (typeof(Storage) !== "undefined") {
-    if (sessionStorage.clickcount) {
-      sessionStorage.clickcount = Number(sessionStorage.clickcount)+1;
-    } else {
-      sessionStorage.clickcount = 1;
-    }
-    document.getElementById("result").innerHTML = "You have clicked the button " + sessionStorage.clickcount + " time(s) in this session.";
-  } else {
-    document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
-  }
-}
-</script>
 </head>
 <body>
     <p>I am sorry. It appears that you are trying to access a page which does not exist. </p>
-    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-<br>
-<img id="drag1" src="../MyFavicon.png" draggable="true" ondragstart="drag(event)" >
-<br>
-<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-
-<p><button onclick="clickCounter()" type="button">Click me!</button></p>
-<div id="result"></div>
-<p>Click the button to see the counter increase.</p>
-<p>Close the browser tab (or window), and try again, and the counter is reset.</p>
-
-  
 </body>
 </html>
