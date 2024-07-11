@@ -16,6 +16,7 @@ footer {
 }
 
 .favicon {
+    align:"left"
     margin: 5%;
     /* width: 128px; /* Adjust as needed */
     /* height: 128px; Maintain aspect ratio */
