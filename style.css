@@ -61,7 +61,7 @@ nav ul li a:hover {
     background-color: #f0f0f0;
     flex: 1;
     min-height: 80vh; /* Ensure the content area is at least 80% of the viewport height */
-    border: 2px solid green; /* Debugging border */
+    border: 20px solid green; /* Debugging border */
 }
 
 
