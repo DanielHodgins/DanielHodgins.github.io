@@ -59,10 +59,8 @@ nav ul li a:hover {
     text-align: left;
     font-family: "Times New Roman", Times, serif; /* Use Times New Roman */
     background-color: #f0f0f0;
-    .content {
-      flex: 1;
-      min-height: 80vh; /* Ensure the content area is at least 80% of the viewport height */
-    }
+    min-height: 80vh; /* Ensure the content area is at least 80% of the viewport height */
+    
 }
 
 
