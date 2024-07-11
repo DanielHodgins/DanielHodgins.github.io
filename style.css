@@ -32,7 +32,7 @@ footer {
     width: 20%; /* Size: 10% of the viewport width when screen is less than 700px */
   }
   .header {
-      background-color: lightblue; /* Change background color to verify media query */
+      background-color: #AAAAFF; /* Change background color to verify media query */
   }
 }
 
