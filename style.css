@@ -16,11 +16,13 @@ footer {
 }
 
 .favicon {
-    align:"left"
-    padding: 5%;
+    position: absolute;
+    top: 10px;
+    left: 10px;
     /* width: 128px; /* Adjust as needed */
     /* height: 128px; Maintain aspect ratio */
     height: 90%; /* Default size: 90% of the header height */
+    margin-right: 10px;
 }
 
 
