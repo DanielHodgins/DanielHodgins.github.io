@@ -22,9 +22,12 @@ footer {
     /* width: 128px; /* Adjust as needed */
     /* height: 128px; Maintain aspect ratio */
     height: 90%; /* Default size: 90% of the header height */
-    margin-right: 10px;
 }
-
+@media (max-width: 700px) {
+      .favicon {
+        height: auto;
+        width: 10%; /* Size: 10% of the viewport width when screen is less than 700px */
+      }
 
 
 nav {
