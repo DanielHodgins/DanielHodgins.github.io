@@ -17,8 +17,7 @@
         <h1>Daniel Hodgins</h1>
         <p>Mathematics PhD Student</p>
     </header>
-
-
+	
     <nav>
         <ul>
             <li class="navcloud"><a href="/index.html">Home</a></li>
@@ -109,18 +108,18 @@
 
     <script>
         // Function to roll a die with specified sides
-function rollDie(sides) {
-    return Math.floor(Math.random() * sides) + 1;
-}
+	function rollDie(sides) {
+    		return Math.floor(Math.random() * sides) + 1;
+	}
 
-// Function to generate random dice roll
-function generateRandomDiceRoll(dieType) {
-    var result = rollDie(dieType.slice(1));
-    return [dieType, result];
-}
+	// Function to generate random dice roll
+	function generateRandomDiceRoll(dieType) {
+	    var result = rollDie(dieType.slice(1));
+ 	   return [dieType, result];
+	}
 
-// Function to display random dice rolls
-function displayRandomDiceRolls() {
+	// Function to display random dice rolls
+	function displayRandomDiceRolls() {
             var rollTypes = ["d4", "d8", "d10", "d12", "d20"];
             var rollTableBody = document.getElementById("roll-table").getElementsByTagName("tbody")[0];
             rollTypes.forEach(function(type) {
@@ -131,10 +130,10 @@ function displayRandomDiceRolls() {
                 cell1.textContent = rollResult[0];
                 cell2.textContent = rollResult[1];
             });
-}
+	}
 
-// Display random dice rolls when the page loads
-window.onload = displayRandomDiceRolls;
+	// Display random dice rolls when the page loads
+	window.onload = displayRandomDiceRolls;
 
     </script>
     
