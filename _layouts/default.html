@@ -12,7 +12,10 @@
 <body>
     <header>
 	<a href="/index.html"> <!-- Anchor tag wrapping the favicon -->
-        	<img src="/MyFavicon.png" alt="Favicon" class="favicon" height=250px>
+		<source srcset="/MyFavicon.png" alt="Favicon" media="(max-width: 600px)" width="10%">
+  		<source srcset="/MyFavicon.png" alt="Favicon" media="(max-width: 1500px)" height="90%">
+  		<source srcset="/MyFavicon.png" alt="Favicon">
+  		<img src="/MyFavicon.png" alt="Favicon">
     	</a>
         <h1>Daniel Hodgins</h1>
         <p>Mathematics PhD Student</p>
