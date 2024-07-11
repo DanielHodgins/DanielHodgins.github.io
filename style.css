@@ -26,10 +26,7 @@ footer {
 @media (max-width: 700px) {
   .favicon {
     height: auto;
-    width: 10%; /* Size: 10% of the viewport width when screen is less than 700px */
-  }
-  .header {
-    background-color: lightblue; /* Change background color to verify media query */
+    width: 20%; /* Size: 10% of the viewport width when screen is less than 700px */
   }
 }
 
