@@ -56,14 +56,17 @@ nav ul li {
     margin-right: 20px;
 }
 
+
 nav ul li a {
     text-decoration: none;
     color: #fff;
+    background-color: #444; /* Added background color */
+    padding: 5px 10px; /* Added padding */
 }
 
 nav ul li a:hover {
-    color: #fff;
-    background-color: #000;
+    color: #444; /* Swapped text color */
+    background-color: #fff; /* Swapped background color */
 }
 
 .content {
