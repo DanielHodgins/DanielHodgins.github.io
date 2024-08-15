@@ -20,6 +20,19 @@
     <script type="text/javascript" id="MathJax-script" async
 	    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
     </script>
+	    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load content from external HTML files
+            function loadHTMLContent(id, filename) {
+                fetch(filename)
+                    .then(response => response.text())
+                    .then(data => document.getElementById(id).innerHTML = data)
+                    .catch(error => console.error('Error loading content:', error));
+            }
+
+            loadHTMLContent('navy', '*/navigation.html');
+        });
+    </script>
 </head>
 <body>
     <header>
@@ -29,22 +42,8 @@
         <h1>Daniel Hodgins</h1>
         <p>Mathematics PhD Student</p>
     </header>
+<div id="navy"></div>
 
-<nav>
-	<ul>
-		<li><a href="/index.html"><div class="navcloud">Home</div></a></li>
-		<li><a href="/pages/about.html"> <div class="navcloud">About</div></a></li>
-            	<!--<li><a href="/pages/contact.html">Contact</a></li>-->
-        	<!--<li><a href="/pages/cv.html">CV</a></li>-->
-         	<li><a href="/pages/teaching.html"><div class="navcloud">Teaching</div></a></li>
-        	<li><a href="/pages/research.html"><div class="navcloud">Research</div></a></li>
-         	<li><a href="/pages/projects.html"><div class="navcloud">Projects</div></a></li>
-            	<!--<li><a href="/pages/blog.html">Blog</a></li>-->
-	        <!--<li><a href="/pages/publications.html">Publications</a></li>-->
-            	<li><a href="/pages/resources.html"><div class="navcloud">Resources</div></a></li>
-            	<li><a href="/pages/gallery.html"><div class="navcloud">Gallery</div></a></li>
-    	</ul>
-</nav>
 
     <div class="content">
         {{ content }}
