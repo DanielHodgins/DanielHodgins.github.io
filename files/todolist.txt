@@ -1,0 +1,6 @@
+Make math activity database
+Make videos/notes for basic courses:
+  MATH 1610 CALCULUS I
+  MATH 1620 CALCULUS II
+  MATH 2630 CALCULUS III
+  MATH 2660 LINEAR ALGEBRA
