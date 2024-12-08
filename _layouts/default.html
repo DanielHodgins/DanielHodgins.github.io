@@ -130,7 +130,7 @@
 
 	// Function to display random dice rolls
 	function displayRandomDiceRolls() {
-            var rollTypes = ["d4", "d8", "d10", "d12", "d20"];
+            var rollTypes = ["d4", "d6", "d8", "d10", "d12", "d20"];
             var rollTableBody = document.getElementById("roll-table").getElementsByTagName("tbody")[0];
             rollTypes.forEach(function(type) {
                 var rollResult = generateRandomDiceRoll(type);
