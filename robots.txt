@@ -1,4 +1,7 @@
 sitemap:/sitemap.xml
 
-User-agent:*
-Disallow:/pages/
+User-agent: Googlebot
+Disallow:
+
+User-agent: *
+Disallow: /
