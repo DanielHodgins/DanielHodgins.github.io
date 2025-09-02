@@ -5,27 +5,23 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Flashcards</title>
   <style>
-    :root { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
+    :root { font-family: system-ui, sans-serif; }
     body { margin: 0; padding: 20px; background: #f6f7fb; color: #111; }
-    .container { max-width: 720px; margin: 0 auto; }
+    .container { max-width: 600px; margin: 0 auto; }
     .card { background: white; padding: 24px; border-radius: 10px; box-shadow: 0 6px 20px rgba(16,24,40,0.08); }
-    .prompt { font-size: 1.2rem; margin-bottom: 12px; }
-    .choices { list-style: none; padding: 0; margin: 0; }
-    .choices li { padding: 10px 12px; border-radius: 8px; margin: 8px 0; border: 1px solid #e6e9ef; cursor: pointer; }
-    .choices li.correct { background: #e6ffed; border-color: #7be3a6; }
-    .choices li.wrong { background: #fff0f0; border-color: #ff9a9a; }
+    .prompt { font-size: 1.4rem; margin-bottom: 12px; font-weight: bold; }
+    .answer { margin-top: 10px; font-size: 1.1rem; display: none; }
     .controls { display:flex; gap:8px; margin-top:12px; }
-    .feedback { margin-top:12px; min-height:1.2rem; }
-    button { padding:8px 12px; border-radius:8px; border:1px solid #d0d5dd; background:white; cursor:pointer; }
+    button { padding:8px 12px; border-radius:8px; border:1px solid #ccc; background:white; cursor:pointer; }
   </style>
 </head>
 <body>
   <main class="container">
-    <h1>Flashcards</h1>
+    <h1>Word Flashcards</h1>
 
     <div id="card" class="card">
       <div id="prompt" class="prompt">Loading...</div>
-      <ul id="choices" class="choices"></ul>
+      <div id="answer" class="answer"></div>
     </div>
 
     <div class="controls">
@@ -33,8 +29,6 @@
       <button id="show">Show Answer</button>
       <button id="next">Next</button>
     </div>
-
-    <div id="feedback" class="feedback"></div>
   </main>
 
   <script>
@@ -42,8 +36,8 @@
     let idx = 0;
 
     const promptEl = document.getElementById('prompt');
-    const choicesEl = document.getElementById('choices');
-    const feedbackEl = document.getElementById('feedback');
+    const answerEl = document.getElementById('answer');
+
     const prevBtn = document.getElementById('prev');
     const nextBtn = document.getElementById('next');
     const showBtn = document.getElementById('show');
@@ -51,28 +45,9 @@
     function render() {
       const c = cards[idx];
       if (!c) return;
-      promptEl.textContent = c.prompt;
-      choicesEl.innerHTML = '';
-      c.choices.forEach((choice, i) => {
-        const li = document.createElement('li');
-        li.textContent = choice;
-        li.addEventListener('click', () => onChoice(i, li));
-        choicesEl.appendChild(li);
-      });
-      feedbackEl.textContent = `Card ${idx+1} of ${cards.length}`;
-    }
-
-    function onChoice(i, liEl) {
-      const correct = cards[idx].answer;
-      Array.from(choicesEl.children).forEach(li => li.classList.remove('correct','wrong'));
-      if (i === correct) {
-        liEl.classList.add('correct');
-        feedbackEl.textContent = 'Correct ✅';
-      } else {
-        liEl.classList.add('wrong');
-        Array.from(choicesEl.children)[correct].classList.add('correct');
-        feedbackEl.textContent = 'Incorrect — see the correct answer highlighted.';
-      }
+      promptEl.textContent = c.word;
+      answerEl.textContent = c.definition;
+      answerEl.style.display = "none";
     }
 
     prevBtn.addEventListener('click', () => {
@@ -84,12 +59,7 @@
       render();
     });
     showBtn.addEventListener('click', () => {
-      const correctIndex = cards[idx].answer;
-      Array.from(choicesEl.children).forEach((li, i) => {
-        li.classList.remove('wrong');
-        li.classList.toggle('correct', i === correctIndex);
-      });
-      feedbackEl.textContent = 'Answer shown';
+      answerEl.style.display = "block";
     });
 
     async function loadTxtDeck(url) {
@@ -97,12 +67,8 @@
       const text = await res.text();
       const lines = text.split("\n").map(l => l.trim()).filter(l => l);
       return lines.map(line => {
-        const [prompt, choicesStr, ansStr] = line.split("::");
-        return {
-          prompt,
-          choices: choicesStr.split("|"),
-          answer: parseInt(ansStr, 10)
-        };
+        const [word, definition] = line.split(",");
+        return { word: word.trim(), definition: definition.trim() };
       });
     }
 

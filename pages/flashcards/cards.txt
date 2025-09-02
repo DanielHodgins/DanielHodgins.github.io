@@ -1,0 +1,6 @@
+ slope, change in y over change in x
+ secant line, a line between any two points on the curve
+ tangent line, a line that touches the curve at exactly one point
+ limit, The ___ is of f(x) is the y-value the function approaches (gets really close but not necessarily equal to) as the x-value approaches a number a.
+ average rate of change, the slope of a secant line
+
