@@ -1,9 +1,29 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Flashcards</title>
+   
+</head>
+<head>
+  <meta name="google-site-verification" content="jApxae4VbInsxHMsbLx5_m7HLbqte6r3hzL9hulz_Pk" />
+  <title>{{ page.title }}</title>
+  <link rel="icon" href="/MyFavicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="/MyFavicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/style.css">
+  <script>
+    	MathJax = {
+        	tex: {
+            		inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+           		displayMath: [ ['\\[', '\\]'] ]
+        	},
+        	svg: {
+            		fontCache: 'global'
+        	}
+    	};
+  </script>
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  </script>
+  
   <style>
     :root { font-family: system-ui, sans-serif; }
     body { margin: 0; padding: 20px; background: #f6f7fb; color: #111; }
@@ -14,15 +34,7 @@
     .controls { display:flex; gap:8px; margin-top:12px; }
     button { padding:8px 12px; border-radius:8px; border:1px solid #ccc; background:white; cursor:pointer; }
   </style>
-  <script>
-    window.MathJax = {
-      tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
-      svg: { fontCache: 'global' }
-    };
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
-
-</head>
+  </head>
 <body>
   <main class="container">
     <h1>Word Flashcards</h1>
