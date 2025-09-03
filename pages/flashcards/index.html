@@ -14,6 +14,14 @@
     .controls { display:flex; gap:8px; margin-top:12px; }
     button { padding:8px 12px; border-radius:8px; border:1px solid #ccc; background:white; cursor:pointer; }
   </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+
 </head>
 <body>
   <main class="container">
@@ -45,11 +53,14 @@
   function render() {
     const c = cards[idx];
     if (!c) return;
-    promptEl.textContent = c.word;
-    answerEl.textContent = c.definition;
-    answerEl.style.display = "none";       // always hide when switching card
-    showBtn.textContent = "Show Answer";   // reset button text
+    promptEl.innerHTML = c.word;
+    answerEl.innerHTML = c.definition;
+    answerEl.style.display = "none";    // always hide when switching card
+    showBtn.textContent = "Show Answer";// reset button text
+
+    MathJax.typesetPromise([promptEl, answerEl]);//LaTeX equation support
   }
+
 
   prevBtn.addEventListener('click', () => {
     idx = (idx - 1 + cards.length) % cards.length;
@@ -75,7 +86,7 @@
     const text = await res.text();
     const lines = text.split("\n").map(l => l.trim()).filter(l => l);
     return lines.map(line => {
-      const [word, definition] = line.split(",");
+      const [word, definition] = line.split("@");
       return { word: word.trim(), definition: definition.trim() };
     });
   }
