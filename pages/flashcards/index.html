@@ -61,6 +61,16 @@
     showBtn.addEventListener('click', () => {
       answerEl.style.display = "block";
     });
+    showBtn.addEventListener('click', () => {
+      if (answerEl.style.display === "none") {
+        answerEl.style.display = "block";
+        showBtn.textContent = "Hide Answer";
+      } else {
+        answerEl.style.display = "none";
+        showBtn.textContent = "Show Answer";
+      }
+    });
+
 
     async function loadTxtDeck(url) {
       const res = await fetch(url);
