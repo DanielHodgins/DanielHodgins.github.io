@@ -15,10 +15,10 @@ infinite limit, means the y-value of a function either increases (∞) or decrea
 horizontal asymptote, a horizontal line that the graph of a function is not allowed to touch at very large values of x
 limit at infinity,  means the y-value of a function approaches a number L as the x-value either increases or decreases without bound
 
-removablediscontinuity,
-piecewise function,
-absolute value function(piecewisedef.),
-rationalize,
+removable discontinuity, On a graph, this is a hole.
+piecewise function,  frequently requireone-sided limits as they are made up of multiple functions
+absolute value function (piecewise def.), a piecewise function that outputs the magnitude of its input |x|= x for x\geq 0 and |x|=-x for x<0
+rationalize, to get rid of the radical in the numerator or denomenator by multiplying by a special (or fancy). For example, we could multiply by the conjugate over the conjugate
 
 SqueezeTheorem,
 verbal argument,
@@ -27,3 +27,4 @@ True Facts about limits of \frac{1}{x^n} and e^{±nx},
 continuous (limit definition),
 continuous on an interval,
 Intermediate Value Theorem (IVT),
+
