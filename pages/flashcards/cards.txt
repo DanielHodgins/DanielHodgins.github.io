@@ -1,6 +1,29 @@
- slope, change in y over change in x
- secant line, a line between any two points on the curve
- tangent line, a line that touches the curve at exactly one point
- limit, The ___ is of f(x) is the y-value the function approaches (gets really close but not necessarily equal to) as the x-value approaches a number a.
- average rate of change, the slope of a secant line
+slope, change in y over change in x
+secant line, a line between any two points on the curve
+tangent line, a line that touches the curve at exactly one point
+limit, The ___ is of f(x) is the y-value the function approaches (gets really close but not necessarily equal to) as the x-value approaches a number a.
+average rate of change, the slope of a secant line
+average velocity, [v_{avg}] of a moving object is the average rate of change of its position [p(t_2) − p(t_1)] with respect to time [t_2 − t_1]
 
+continuous, you can draw the function without picking up your pencil
+jump discontinuity, occurs when there is a vertical gap between different parts of a function
+one-sided limit,  is the y-value a function approaches as the x-value approaches a number a from either the right or the left of a.
+domain,  of a function is its set of allowed x-values
+vertical asymptote,  a vertical line that the graph of a function is not allowed to touch. It corresponds to an x-value that is not in a function’s domain because it makes the function’s denominator zero.
+infinite discontinuity, another name for vertical asymptote
+infinite limit, means the y-value of a function either increases (∞) or decreases (−∞) without bound as the x-value approaches a number a.
+horizontal asymptote, a horizontal line that the graph of a function is not allowed to touch at very large values of x
+limit at infinity,  means the y-value of a function approaches a number L as the x-value either increases or decreases without bound
+
+removablediscontinuity,
+piecewise function,
+absolute value function(piecewisedef.),
+rationalize,
+
+SqueezeTheorem,
+verbal argument,
+True Facts about limits of \frac{1}{x^n} and e^{±nx},
+
+continuous (limit definition),
+continuous on an interval,
+Intermediate Value Theorem (IVT),
