@@ -4,7 +4,6 @@ tangent line@ a line that touches the curve at exactly one point
 limit@ The ___ is of f(x) is the y-value the function approaches (gets really close but not necessarily equal to) as the x-value approaches a number $a$.
 average rate of change@ the slope of a secant line
 average velocity@ [v_{avg}] of a moving object is the average rate of change of its position [p(t_2) − p(t_1)] with respect to time [t_2 − t_1]
-
 continuous@ you can draw the function without picking up your pencil
 jump discontinuity@ occurs when there is a vertical gap between different parts of a function
 one-sided limit@  is the y-value a function approaches as the x-value approaches a number $a$ from either the right or the left of a.
@@ -14,17 +13,16 @@ infinite discontinuity@ another name for vertical asymptote
 infinite limit@ means the y-value of a function either increases ($\infty$) or decreases ($−\infty$) without bound as the x-value approaches a number $a$.
 horizontal asymptote@ a horizontal line that the graph of a function is not allowed to touch at very large values of x
 limit at infinity@  means the y-value of a function approaches a number $L$ as the x-value either increases or decreases without bound
-
 removable discontinuity@ On a graph, this is a hole.
 piecewise function@  frequently requireone-sided limits as they are made up of multiple functions
 absolute value function (piecewise def.)@ a piecewise function that outputs the magnitude of its input $|x|= x$ for $x \geq 0$ and $|x|=-x$ for $x<0$
 rationalize@ to get rid of the radical in the numerator or denomenator by multiplying by a special (or fancy). For example, we could multiply by the conjugate over the conjugate
-
-SqueezeTheorem@
-verbal argument@
-True Facts about limits of $\frac{1}{x^n}$ and $e^{±nx}$@
+SqueezeTheorem@  If we can find two functions, one greater than and one less than our problem function, each with the same limit, our problem limit is forced to have the same value as the bounding limits.
+verbal argument@  Since infinity is not a number, we can not use any of our previous methods for finding limits. To evaluate infinite limits, we will have to use a ______ ________, or words.
+True Facts about limits of $\frac{1}{x^n}$ and $e^{±nx}$@ $\lim_{ \to \pm\infty}\frac{1}{x^n} = 0$ and $\lim_{ \to \pm\infty} e^{\mp nx} = 0$
 
 continuous (limit definition)@
 continuous on an interval@
 Intermediate Value Theorem (IVT)@
+
 
