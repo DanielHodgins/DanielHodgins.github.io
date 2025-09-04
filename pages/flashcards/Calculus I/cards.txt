@@ -17,12 +17,13 @@ removable discontinuity@ On a graph, this is a hole.
 piecewise function@  frequently requireone-sided limits as they are made up of multiple functions
 absolute value function (piecewise def.)@ a piecewise function that outputs the magnitude of its input $|x|= x$ for $x \geq 0$ and $|x|=-x$ for $x<0$
 rationalize@ to get rid of the radical in the numerator or denomenator by multiplying by a special (or fancy). For example, we could multiply by the conjugate over the conjugate
-SqueezeTheorem@  If we can find two functions, one greater than and one less than our problem function, each with the same limit, our problem limit is forced to have the same value as the bounding limits.
+Squeeze Theorem@  If we can find two functions, one greater than and one less than our problem function, each with the same limit, our problem limit is forced to have the same value as the bounding limits.
 verbal argument@  Since infinity is not a number, we can not use any of our previous methods for finding limits. To evaluate infinite limits, we will have to use a ______ ________, or words.
 True Facts about limits of $\frac{1}{x^n}$ and $e^{±nx}$@ $\lim_{ \to \pm\infty}\frac{1}{x^n} = 0$ and $\lim_{ \to \pm\infty} e^{\mp nx} = 0$
 
-continuous (limit definition)@
-continuous on an interval@
+Continuous (limit definition)@
+Continuous on an interval@
 Intermediate Value Theorem (IVT)@
+
 
 
