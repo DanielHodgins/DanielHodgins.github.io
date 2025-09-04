@@ -1,0 +1,180 @@
+---
+layout: default
+title: Calculus I Flashcards
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta name="google-site-verification" content="jApxae4VbInsxHMsbLx5_m7HLbqte6r3hzL9hulz_Pk" />
+  <title>{{ page.title }}</title>
+  <link rel="icon" href="/MyFavicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="/MyFavicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    	MathJax = {
+        	tex: {
+            		inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+           		displayMath: [ ['\\[', '\\]'] ]
+        	},
+        	svg: {
+            		fontCache: 'global'
+        	}
+    	};
+  </script>
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  </script>
+  <style>
+     :root {
+        font-family: system-ui, sans-serif;
+      }
+      body {
+        margin: 0;
+        padding: 16px;
+        background: #f6f7fb;
+        color: #111;
+      }
+      .container {
+        max-width: 700px;
+        margin: 0 auto;
+      }
+      h1 {
+        text-align: center;
+        font-size: clamp(1.4rem, 2.5vw, 2rem);
+        margin-bottom: 20px;
+      }
+      .card {
+        background: white;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 6px 20px rgba(16,24,40,0.08);
+        word-wrap: break-word;
+      }
+      .prompt {
+        font-size: clamp(1.2rem, 2vw, 1.6rem);
+        margin-bottom: 12px;
+        font-weight: bold;
+      }
+      .answer {
+        margin-top: 10px;
+        font-size: clamp(1rem, 1.8vw, 1.2rem);
+        display: none;
+      }
+      .controls {
+        display: flex;
+        gap: 10px;
+        margin-top: 16px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      button {
+        flex: 1 1 auto;
+        min-width: 100px;
+        padding: 10px 14px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        background: white;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: background 0.2s, transform 0.1s;
+      }
+      button:hover {
+        background: #f0f0f0;
+      }
+      button:active {
+        transform: scale(0.96);
+      }
+      /*Phone Screens*/
+      @media (max-width: 480px) {
+        .card {
+          padding: 16px;
+        }
+        .controls {
+          flex-direction: column;
+        }
+        button {
+          width: 100%;
+        }
+      }
+  </style>
+  </head>
+<body>
+  <main class="container">
+    <h1>Calculus I Flashcards</h1>
+
+    <div id="card" class="card">
+      <div id="prompt" class="prompt">Loading...</div>
+      <div id="answer" class="answer"></div>
+    </div>
+
+    <div class="controls">
+      <button id="prev">Prev</button>
+      <button id="show">Show Answer</button>
+      <button id="next">Next</button>
+    </div>
+  </main>
+
+  <script>
+  let cards = [];
+  let idx = 0;
+
+  const promptEl = document.getElementById('prompt');
+  const answerEl = document.getElementById('answer');
+
+  const prevBtn = document.getElementById('prev');
+  const nextBtn = document.getElementById('next');
+  const showBtn = document.getElementById('show');
+
+  function render() {
+    const c = cards[idx];
+    if (!c) return;
+    promptEl.innerHTML = c.word;
+    answerEl.innerHTML = c.definition;
+    answerEl.style.display = "none";    // always hide when switching card
+    showBtn.textContent = "Show Answer";// reset button text
+
+    MathJax.typesetPromise([promptEl, answerEl]);//LaTeX equation support
+  }
+
+
+  prevBtn.addEventListener('click', () => {
+    idx = (idx - 1 + cards.length) % cards.length;
+    render();
+  });
+  nextBtn.addEventListener('click', () => {
+    idx = (idx + 1) % cards.length;
+    render();
+  });
+
+  showBtn.addEventListener('click', () => {
+    if (answerEl.style.display === "none") {
+      answerEl.style.display = "block";
+      showBtn.textContent = "Hide Answer";
+    } else {
+      answerEl.style.display = "none";
+      showBtn.textContent = "Show Answer";
+    }
+  });
+
+  async function loadTxtDeck(url) {
+    const res = await fetch(url);
+    const text = await res.text();
+    const lines = text.split("\n").map(l => l.trim()).filter(l => l);
+    return lines.map(line => {
+      const [word, definition] = line.split("@");
+      return { word: word.trim(), definition: definition.trim() };
+    });
+  }
+
+  loadTxtDeck("cards.txt").then(data => {
+    cards = data;
+    idx = 0;
+    render();
+  }).catch(err => {
+    promptEl.textContent = "Error loading cards.txt";
+    console.error(err);
+  });
+</script>
+</body>
+</html>
