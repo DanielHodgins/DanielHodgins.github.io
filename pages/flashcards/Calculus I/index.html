@@ -101,6 +101,7 @@ title: Calculus I Flashcards
 <body>
   <main class="container">
     <h1>Calculus I Flashcards</h1>
+    <div id="progress">0 / 0</div>
 
     <div id="card" class="card">
       <div id="prompt" class="prompt">Loading...</div>
@@ -111,31 +112,38 @@ title: Calculus I Flashcards
       <button id="prev">Prev</button>
       <button id="show">Show Answer</button>
       <button id="next">Next</button>
+      <button id="shuffle">Shuffle</button>
     </div>
   </main>
 
   <script>
   let cards = [];
   let idx = 0;
+  let isShuffled = false;
 
   const promptEl = document.getElementById('prompt');
   const answerEl = document.getElementById('answer');
+  const progressEl = document.getElementById('progress');
 
   const prevBtn = document.getElementById('prev');
   const nextBtn = document.getElementById('next');
   const showBtn = document.getElementById('show');
+  const shuffleBtn = document.getElementById('shuffle');
 
   function render() {
     const c = cards[idx];
     if (!c) return;
     promptEl.innerHTML = c.word;
     answerEl.innerHTML = c.definition;
-    answerEl.style.display = "none";    // always hide when switching card
-    showBtn.textContent = "Show Answer";// reset button text
-
-    MathJax.typesetPromise([promptEl, answerEl]);//LaTeX equation support
+    answerEl.style.display = "none";    
+    showBtn.textContent = "Show Answer";
+    updateProgress();
+    MathJax.typesetPromise([promptEl, answerEl]);
   }
 
+  function updateProgress() {
+    progressEl.textContent = `${idx + 1} / ${cards.length}`;
+  }
 
   prevBtn.addEventListener('click', () => {
     idx = (idx - 1 + cards.length) % cards.length;
@@ -145,7 +153,6 @@ title: Calculus I Flashcards
     idx = (idx + 1) % cards.length;
     render();
   });
-
   showBtn.addEventListener('click', () => {
     if (answerEl.style.display === "none") {
       answerEl.style.display = "block";
@@ -155,6 +162,41 @@ title: Calculus I Flashcards
       showBtn.textContent = "Show Answer";
     }
   });
+  shuffleBtn.addEventListener('click', () => {
+    if (!isShuffled) {
+      cards = shuffleArray(cards);
+      idx = 0;
+      shuffleBtn.textContent = "Unshuffle";
+      isShuffled = true;
+    } else {
+      loadTxtDeck("cards.txt").then(data => {
+        cards = data;
+        idx = 0;
+        shuffleBtn.textContent = "Shuffle";
+        isShuffled = false;
+        render();
+      });
+      return;
+    }
+    render();
+  });
+
+  // keyboard shortcuts
+  document.addEventListener('keydown', (e) => {
+    if (e.key === "ArrowRight") nextBtn.click();
+    if (e.key === "ArrowLeft") prevBtn.click();
+    if (e.key === " ") { e.preventDefault(); showBtn.click(); }
+    if (e.key.toLowerCase() === "r") shuffleBtn.click();
+  });
+
+  function shuffleArray(arr) {
+    let a = arr.slice();
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
 
   async function loadTxtDeck(url) {
     const res = await fetch(url);
@@ -174,6 +216,6 @@ title: Calculus I Flashcards
     promptEl.textContent = "Error: please reload the page";
     console.error(err);
   });
-</script>
+  </script>
 </body>
 </html>
