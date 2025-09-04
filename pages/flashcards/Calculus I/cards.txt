@@ -21,9 +21,10 @@ Squeeze Theorem@  If we can find two functions, one greater than and one less th
 verbal argument@  Since infinity is not a number, we can not use any of our previous methods for finding limits. To evaluate infinite limits, we will have to use a ______ ________, or words.
 True Facts about limits of $\frac{1}{x^n}$ and $e^{±nx}$@ $\lim_{ \to \pm\infty}\frac{1}{x^n} = 0$ and $\lim_{ \to \pm\infty} e^{\mp nx} = 0$
 
-Continuous (limit definition)@
-Continuous on an interval@
+Continuous (limit definition)@ if $f(a)$ and $\lim_{x \to a} f(x)$ exists and $f(a) = \lim_{x \to a} f(x)$
+Continuous on an interval@ a function is continuous on an interval if it is continuous at all numbers contained in the interval
 Intermediate Value Theorem (IVT)@
+
 
 
 
