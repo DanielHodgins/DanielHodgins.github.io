@@ -25,11 +25,12 @@ Continuous on an interval@ a function is continuous on an interval if it is cont
 Intermediate Value Theorem (IVT)@a function $f$ is continuous on the closed interval $[a,b]$ and $N$ is between $f(a)$ and $f(b)$. Then there exists a number $c$ in $(a,b)$ such that $f(c) = N$
 
 
-derivative@
-limit definition of derivative@
-differentiable@
-linear approximation@
-linearization@
+derivative@ the slope of the tangent line; the instantaneous rate of change at a point of the function
+limit definition of derivative@ $f'(x)= \lim_{h \to 0} \frac{f(x+h)-f(x)}{h}$
+differentiable@if the derivate of the function exists then the function is ______________.
+linear approximation@ A method of approximationg a function near a specific point using the equation of its tangent line at that point
+linearization@ a local approximation of a function using the equation of the tangent line at some point.
+
 
 
 
