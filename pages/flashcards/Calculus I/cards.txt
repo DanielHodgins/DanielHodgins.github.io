@@ -20,10 +20,16 @@ rationalize@ to get rid of the radical in the numerator or denomenator by multip
 Squeeze Theorem@  If we can find two functions, one greater than and one less than our problem function, each with the same limit, our problem limit is forced to have the same value as the bounding limits.
 verbal argument@  Since infinity is not a number, we can not use any of our previous methods for finding limits. To evaluate infinite limits, we will have to use a ______ ________, or words.
 True Facts about limits of $\frac{1}{x^n}$ and $e^{±nx}$@ $\lim_{ \to \pm\infty}\frac{1}{x^n} = 0$ and $\lim_{ \to \pm\infty} e^{\mp nx} = 0$
-
 Continuous (limit definition)@ if $f(a)$ and $\lim_{x \to a} f(x)$ exists and $f(a) = \lim_{x \to a} f(x)$
 Continuous on an interval@ a function is continuous on an interval if it is continuous at all numbers contained in the interval
-Intermediate Value Theorem (IVT)@
+Intermediate Value Theorem (IVT)@a function $f$ is continuous on the closed interval $[a,b]$ and $N$ is between $f(a)$ and $f(b)$. Then there exists a number $c$ in $(a,b)$ such that $f(c) = N$
+
+
+derivative@
+limit definition of derivative@
+differentiable@
+linear approximation@
+linearization@
 
 
 
