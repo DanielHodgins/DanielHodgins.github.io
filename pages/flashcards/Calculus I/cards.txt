@@ -29,7 +29,6 @@ differentiable@if the derivate of the function exists then the function is _____
 linear approximation@ A method of approximationg a function near a specific point using the equation of its tangent line at that point
 linearization@ a local approximation of a function using the equation of the tangent line at some point.
 the relationship between position, velocity, and acceleration@ acceleration is the derivative of velocity which is the derivative of position
-
 $f(x) = \sin (x)$@$f′(x) = \cos (x)$
 $f(x) = \cos (x)$@$f′(x) = −\sin (x)$
 $f(x) = \tan (x)$@$f′(x) = \sec^2 (x)$
@@ -40,9 +39,14 @@ $f(x) = e^x$@$f′(x) = e^x$
 $f(x) = a^x$@$f′(x) = a^x \ln a$
 $f(x) = \ln x$@$f′(x) = \frac{1}{x}$
 $f(x) = \log_a x$@$f′(x) = \frac{1}{x \ln a}$
-
-
-
+$f(x) = \sin^{-1} (x)$@$f′(x) = \frac{1}{\sqrt{1-x^2}}$
+$f(x) = \cos^{-1} (x)$@$f′(x) = \frac{-1}{\sqrt{1-x^2}}$
+$f(x) = \tan^{-1} (x)$@$f′(x) = \frac{1}{1+x^2}$
+$f(x) = \csc^{-1} (x)$@$f′(x) = \frac{-1}{x\sqrt{1-x^2}}$
+$f(x) = \sec^{-1} (x)$@$f′(x) = \frac{1}{x\sqrt{1-x^2}}$
+$f(x) = \cot^{-1} (x)$@$f′(x) = \frac{-1}{1+x^2}$
+$f(x) = \sinh x$@$f′(x) = \cosh x$
+$f(x) = \cosh x$@$f′(x) = \sinh x$
 
 
 
