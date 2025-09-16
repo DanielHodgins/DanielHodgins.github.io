@@ -36,6 +36,35 @@ $f(x) = \tan (x)$@$f′(x) = \sec^2 (x)$
 $f(x) = \csc (x)$@$f′(x) = −\csc (x) \cot (x)$
 $f(x) = \sec (x)$@$f′(x) = \sec (x) \tan (x)$
 $f(x) = \cot (x)$@$f′(x) = −\csc^2 (x)$
+$f(x) = e^x$@$f′(x) = e^x$
+$f(x) = a^x$@$f′(x) = a^x \ln a$
+$f(x) = \ln x$@$f′(x) = \frac{1}{x}$
+$f(x) = \log_a x$@$f′(x) = \frac{1}{x \ln a}$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
