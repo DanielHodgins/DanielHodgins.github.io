@@ -28,9 +28,14 @@ limit definition of derivative@ $f'(x)= \lim_{h \to 0} \frac{f(x+h)-f(x)}{h}$
 differentiable@if the derivate of the function exists then the function is ______________.
 linear approximation@ A method of approximationg a function near a specific point using the equation of its tangent line at that point
 linearization@ a local approximation of a function using the equation of the tangent line at some point.
+the relationship between position, velocity, and acceleration@ acceleration is the derivative of velocity which is the derivative of position
 
- the relationship between position, velocity, and acceleration@
-
+$f(x) = \sin (x)$@$f′(x) = \cos (x)$
+$f(x) = \cos (x)$@$f′(x) = −\sin (x)$
+$f(x) = \tan (x)$@$f′(x) = \sec^2 (x)$
+$f(x) = \csc (x)$@$f′(x) = −\csc (x) \cot (x)$
+$f(x) = \sec (x)$@$f′(x) = \sec (x) \tan (x)$
+$f(x) = \cot (x)$@$f′(x) = −\csc^2 (x)$
 
 
 
