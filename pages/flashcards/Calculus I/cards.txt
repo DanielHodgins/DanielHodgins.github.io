@@ -49,7 +49,8 @@ $f(x) = \sinh x$@$f′(x) = \cosh x$
 $f(x) = \cosh x$@$f′(x) = \sinh x$
 
 
-
+power rule@
+derivative of a constant function@
 
 
 
