@@ -52,6 +52,11 @@ $f(x) = \cosh x$@$f′(x) = \sinh x$
 power rule@
 derivative of a constant function@
 
+product@
+quotient@
+product rule@
+quotient rule@
+
 
 
 
