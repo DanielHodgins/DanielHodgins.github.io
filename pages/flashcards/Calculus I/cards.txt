@@ -47,17 +47,17 @@ $f(x) = \sec^{-1} (x)$@$f′(x) = \frac{1}{x\sqrt{1-x^2}}$
 $f(x) = \cot^{-1} (x)$@$f′(x) = \frac{-1}{1+x^2}$
 $f(x) = \sinh x$@$f′(x) = \cosh x$
 $f(x) = \cosh x$@$f′(x) = \sinh x$
+power rule@ $\frac{\mathrm{d} x^n}{\mathrm{d} x}= nx^{n-1}$
+derivative of a constant function@ $\frac{\mathrm{d} C}{\mathrm{d} x}= 0$ for
+product@ multipliction
+quotient@ division
+product rule@ $(fg)′=fg′+f′g$
+quotient rule@ $(\frac{f}{g})′= \frac{gf′−fg′}{g^2}$; memory trick: Low Dee High, High Dee Low
+function composition@ $f\circ g (x) = f(g(x))
+chain rule@ \frac{\mathrm{d} f(g(x)}{\mathrm{d} x} = f'(g(x))g'(x)
 
-
-power rule@
-derivative of a constant function@
-
-product@
-quotient@
-product rule@
-quotient rule@
-
-
+indeterminate form(withthe seventypes)@ $\frac{0}{0}, \frac{\infty}{\infty}, 0 \times \infty, 1^\infty, \infty^0, \infty- \infty, 0^0$
+L’Hospital’s Rule@ Suppose $f$ and $g$ are differentiable functions and $g′ ̸\neq 0$ on an open interval $I$ that contains a (except possibly at a). If $\lim_{x\toa} \frac{f(x)}{g(x)} is of Type $\frac{0}{0}$ or $\frac{\infty}{\infty}$, then $\lim_{x\to a} \frac{f(x)}{g(x)} = \lim_{x\to a} \frac{f′(x)}{g′(x)}$
 
 
 
