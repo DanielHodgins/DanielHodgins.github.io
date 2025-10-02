@@ -55,11 +55,9 @@ product rule@ $(fg)′=fg′+f′g$
 quotient rule@ $(\frac{f}{g})′= \frac{gf′−fg′}{g^2}$; memory trick: Low Dee High, High Dee Low
 function composition@ $f\circ g (x) = f(g(x))
 chain rule@ \frac{\mathrm{d} f(g(x)}{\mathrm{d} x} = f'(g(x))g'(x)
-
 indeterminate form(withthe seventypes)@ $\frac{0}{0}, \frac{\infty}{\infty}, 0 \times \infty, 1^\infty, \infty^0, \infty- \infty, 0^0$
 L’Hospital’s Rule@ Suppose $f$ and $g$ are differentiable functions and $g′ ̸\neq 0$ on an open interval $I$ that contains a (except possibly at a). If $\lim_{x\toa} \frac{f(x)}{g(x)} is of Type $\frac{0}{0}$ or $\frac{\infty}{\infty}$, then $\lim_{x\to a} \frac{f(x)}{g(x)} = \lim_{x\to a} \frac{f′(x)}{g′(x)}$
-
-
+Mean Value Theorem@If a function is continuous and differentiable on an interval, then we can always find a tangent line to the function that is parallel to the secant line of the function on that interval.
 
 
 
