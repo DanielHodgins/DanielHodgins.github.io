@@ -62,6 +62,23 @@ Mean Value Theorem@If a function is continuous and differentiable on an interval
 
 
 
+implicitly defined function@
+logarithm rules@
+logarithmic differentiation@
+Local (relative) maximum and minimum@
+Global (absolute)@
+maximum and minimum@
+extrema@
+EVT@
+Rolle’s Theorem@
+critical numbers@
+increasing/decreasing functions@
+increasing/decreasing test@
+First derivative test@
+concave up@
+concave down@
+Concavity Test@
+inflection point@
 
 
 
