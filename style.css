@@ -80,7 +80,7 @@ nav ul li a:hover {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.5); /* Increased spread radius and adjusted transparency */
-    text-align: justify;
+    text-align: left;
     overflow: hidden;
     margin: auto;
 }
@@ -146,6 +146,7 @@ ul {
 ul li {
     text-align: left;
 }
+
 
 
 
