@@ -1,0 +1,209 @@
+---
+layout: default
+title: Graph Conquest: A Two-Player Graph-Moving Game
+---
+<!DOCTYPE html>
+<html lang="en">
+<body>
+
+<header>
+    <h1>Graph Conquest: A Two-Player Graph-Moving Game</h1>
+    <p>Graph theory, positional games, and the visualization of a finite state space</p>
+</header>
+
+<main>
+<section>
+    <h2>Introduction</h2>
+    <p>
+        This game is played on a fixed graph with nine vertices.
+        Two players, Blue and Red, each control three tokens.
+        The tokens move along edges of the graph, and the objective is to move all three tokens into the
+        opponent's original set of vertices.
+    </p>
+    <p>
+        Although a game can continue indefinitely, the number of possible positions is finite.
+        This makes the game suitable for computational analysis using a digraph whose vertices represent game states
+        and whose edges represent legal moves.
+    </p>
+</section>
+
+<section>
+    <h2>The underlying graph</h2>
+    <p>
+        Let \(G = (V,E)\), where
+        \(V = \{0,1,2,3,4,5,6,7,8\}\).
+        Two vertices are adjacent exactly when their corresponding entry in
+        the adjacency matrix is \(1\).
+    </p>
+    <p>The adjacency matrix is</p>
+    <div class="formula">
+        \[
+        A =
+        \begin{bmatrix}
+        0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        1 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        0 & 1 & 0 & 0 & 1 & 1 & 0 & 0 & 0 \\
+        0 & 0 & 0 & 0 & 1 & 0 & 1 & 0 & 0 \\
+        0 & 0 & 1 & 1 & 0 & 1 & 1 & 0 & 0 \\
+        0 & 0 & 1 & 0 & 1 & 0 & 0 & 0 & 0 \\
+        0 & 0 & 0 & 1 & 1 & 0 & 0 & 1 & 0 \\
+        0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 1 \\
+        0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0
+        \end{bmatrix}.
+        \]
+    </div>
+    <p>
+        The graph is fixed throughout the game. Only the locations of the colored tokens and the identity of the player whose turn it is change.
+    </p>
+</section>
+
+<section>
+    <h2>Rules of the game</h2>
+    <ol>
+        <li>Blue controls three tokens, initially occupying vertices \(0\), \(1\), and \(2\).</li>
+        <li>Red controls three tokens, initially occupying vertices \(6\), \(7\), and \(8\).</li>
+        <li>Players alternate turns, with Blue moving first.</li>
+        <li>On a turn, a player moves exactly one of that player's tokens along one edge to an unoccupied adjacent vertex.</li>
+        <li>A piece can not move to a vertex occupied by any other piece.</li>
+        <li>If the player whose turn it is has no legal move, that player passes, and the other player takes the next turn.</li>
+        <li>If neither player has a legal move and neither has already won, the position is a draw.</li>
+    </ol>
+    <div class="note">
+        <strong>Winning conditions:</strong>
+        <p>
+            <span class="piece blue">Blue wins</span> when vertices \(6\), \(7\), and \(8\)
+            are all occupied by Blue tokens.
+        </p>
+        <p>
+            <span class="piece red">Red wins</span> when vertices \(0\), \(1\), and \(2\)
+            are all occupied by Red tokens.
+        </p>
+    </div>
+</section>
+
+<section>
+    <h2>Representing a game state</h2>
+    <p>
+        A position is recorded as a triple
+        \((B,R,t)\), where:
+    </p>
+    <ul>
+        <li>\(B\) is the set of vertices occupied by Blue.</li>
+        <li>\(R\) is the set of vertices occupied by Red.</li>
+        <li>\(t\) identifies the player whose turn it is.</li>
+    </ul>
+    <p>
+        The sets \(B\) and \(R\) each contain three vertices, and they are disjoint.
+        The remaining three vertices are empty.
+    </p>
+    <p>The initial state is</p>
+    <div class="formula">
+        \(B = \{0,1,2\}\), &nbsp; \(R = {6,7,8}\), &nbsp; \(t = Blue\).
+    </div>
+    <p>
+        Tokens of the same color are indistinguishable. For example, exchanging
+        the names of two Blue tokens does not create a new state.
+    </p>
+</section>
+
+<section>
+    <h2>Estimated Size of the (Finite) Game "Tree" </h2>
+    <p>
+        First choose the three vertices occupied by Blue. There are
+        \(\binom{9}{3} = 84\) choices. From the six remaining vertices, choose
+        the three occupied by Red. There are \(\binom{6}{3} = 20\) choices.
+    </p>
+    <div class="formula">
+        \(\text{Number of piece configurations }=
+        \binom{9}{3} \binom{6}{3} = (84)(20) = 1,680\).
+    </div>
+    <p>
+        Since either Blue or Red may be next to move, the number of states
+        including turn information is at most \(2 (1,680) = 3,360\).
+    </p>
+    <p>
+        This is an upper bound on the total state space. Starting from the
+        specified initial state, only some of these states may be reachable.
+    </p>
+    <p>
+        The game need not end: tokens can move repeatedly between positions,
+        and players may pass. Thus, the tree of complete move histories can
+        be infinite. The finite object is the state graph, which records each
+        state once and connects it to its possible successor states.
+    </p>
+</section>
+
+<section>
+    <h2>The state graph and game "tree"</h2>
+    <h3>State graph</h3>
+    <p>
+        The state graph is a digraph.
+        Each vertex represents a state \((B,R,t)\).
+        For states \(s\) and \(s'\) that share an edge from \(s\) to \(s'\) means that one legal move or pass transforms \(s\) into \(s'\).
+        If the same position is reached by several different sequences of moves, it is represented by the same
+        vertex in the state graph.
+    </p>
+    <h3>Game "tree"</h3>
+    <p>
+        A game tree represents histories of play. Each node represents a
+        particular sequence of moves from the initial position. Different
+        histories can lead to the same state, so a game tree may contain
+        many copies of a position. Because the game is a loopy game, can cycle indefinitely,
+        the unrestricted game tree can be infinite and is not technically a tree.
+    </p>
+    <p>
+        The interactive visualization uses the finite state graph, not an
+        infinitely expanded tree. This makes it possible to explore all
+        reachable states without expanding every possible history separately.
+    </p>
+</section>
+
+<section>
+    <h2>Using the interactive visualization</h2>
+    <p>
+        Open the <a href="pages/tabletop_games/Scrabble/view_game_graph.html">game graph visualizer</a>
+        to see the possible game states and moves between them..
+    </p>
+    <table>
+        <thead>
+            <tr><th>Action</th><th>How to use it</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>Zoom</td><td>Use the mouse wheel or trackpad.</td></tr>
+            <tr><td>Pan</td><td>Drag the background.</td></tr>
+            <tr><td>Move a node</td><td>Drag a state node to reposition it.</td></tr>
+            <tr><td>Inspect a state</td><td>Hover over a node to see its tooltip.</td></tr>
+            <tr><td>Select a state</td><td>Click a node to highlight or select it.</td></tr>
+            <tr><td>Explore transitions</td><td>Follow directed edges to neighboring states.</td></tr>
+            <tr><td>Adjust layout</td><td>Use the visualization's physics controls if enabled.</td></tr>
+        </tbody>
+    </table>
+    <p>
+        In the current color scheme, blue indicates a Blue-winning terminal
+        state, red indicates a Red-winning terminal state, gray indicates a
+        draw, and light gray indicates a nonterminal state. The edge tooltip
+        can display the move that connects two states.
+    </p>
+    <p>
+        A terminal winning state has no outgoing moves in the generated
+        game graph. A pass is represented as an edge that changes whose turn
+        it is without moving any piece.
+    </p>
+</section>
+
+<section>
+    <h2>Questions for further analysis</h2>
+    <ul>
+        <li>Can Blue force a win from the initial state, regardless of Red's strategy?</li>
+        <li>Can Red force a win, regardless of Blue's strategy?</li>
+        <li>Which states allow a player to force a win (in the fewest moves)?</li>
+        <li>Which states lie on directed cycles, allowing play to continue indefinitely?</li>
+        <li>How many states are reachable from the initial configuration?</li>
+        <li>How does the outcome change if the starting configuration or graph is modified?</li>
+    </ul>
+</section>
+</main>
+
+
+</body>
+</html>
