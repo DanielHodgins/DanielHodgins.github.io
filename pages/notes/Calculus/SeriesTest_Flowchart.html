@@ -6,12 +6,33 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Infinite Series Test Selection Flowchart</title>
 
+<!-- MathJax Configuration -->
+<script>
+window.MathJax = {
+    tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+    },
+    svg: {
+        fontCache: 'global'
+    },
+    startup: {
+        typeset: false
+    }
+};
+</script>
+
+<!-- Load MathJax -->
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+<!-- Load Mermaid and render -->
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
 
 mermaid.initialize({
-    startOnLoad: true,
+    startOnLoad: false,
     theme: 'default',
+    securityLevel: 'loose',
     flowchart: {
         curve: 'basis',
         nodeSpacing: 35,
@@ -20,15 +41,39 @@ mermaid.initialize({
         useMaxWidth: true
     }
 });
-MathJax = {
-        	tex: {
-            		inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
-           		displayMath: [ ['\\[', '\\]'] ]
-        	},
-        	svg: {
-            		fontCache: 'global'
-        	}
-    	};
+
+async function renderDiagram() {
+    try {
+        // 1. Render Mermaid
+        await mermaid.run({
+            querySelector: '.mermaid'
+        });
+
+        // 2. Wait for MathJax to initialize
+        await window.MathJax.startup.promise;
+
+        // 3. Find HTML labels inside Mermaid's SVG
+        const labels = document.querySelectorAll(
+            '.mermaid foreignObject div'
+        );
+
+        // 4. Typeset the subtitle and Mermaid labels
+        const elements = [
+            document.querySelector('.subtitle'),
+            ...labels
+        ].filter(Boolean);
+
+        await window.MathJax.typesetPromise(elements);
+
+        console.log('Mermaid and MathJax rendered successfully.');
+
+    } catch (error) {
+        console.error('Rendering error:', error);
+    }
+}
+
+// Wait until the page and deferred scripts have loaded
+window.addEventListener('load', renderDiagram, { once: true });
 </script>
 
 <style>
@@ -66,9 +111,29 @@ h1 {
     text-align: center;
 }
 
+/* Allow MathJax expressions to display inside Mermaid labels */
+.mermaid foreignObject {
+    overflow: visible;
+}
+
+.mermaid mjx-container {
+    display: inline-block;
+}
+
+.mermaid mjx-container svg {
+    vertical-align: middle;
+    overflow: visible;
+}
+
 @media print {
-    body { background: white; padding: 0; }
-    .diagram-container { box-shadow: none; }
+    body {
+        background: white;
+        padding: 0;
+    }
+
+    .diagram-container {
+        box-shadow: none;
+    }
 }
 </style>
 </head>
@@ -76,38 +141,40 @@ h1 {
 <body>
 
 <h1>Choosing a Test for an Infinite Series</h1>
+
 <p class="subtitle">
 A flowchart for determining convergence or divergence of
-$\displaystyle sum a_n$.
+$\displaystyle\sum_{n=1}^{\infty}a_n$.
 </p>
 
 <div class="diagram-container">
+
 <pre class="mermaid">
 flowchart TD
 
-    A(["START<br/>Analyze $\displaystyle sum a_n$"])
+    A(["START<br/>Analyze $\displaystyle\sum_{n=1}^{\infty}a_n$"])
 
-    A --> B{"Does<br/>$\lim a_n = 0$?"}
+    A --> B{"Does<br/>$\displaystyle\lim_{n\to\infty}a_n=0$?"}
 
-    B -->|No| C["DIVERGES<br/>$n$th-Term Test"]
+    B -->|No| C["DIVERGES<br/>nth-Term Test"]
     B -->|Yes| D{"Recognize a<br/>familiar series?"}
 
-    D -->|Geometric| E{"$|r| \lt 1$?"}
-    E -->|Yes| F["CONVERGES<br/>$S = a / (1-r)$"]
+    D -->|Geometric| E{"$|r|\lt 1$?"}
+    E -->|Yes| F["CONVERGES<br/>$S=\frac{a}{1-r}$"]
     E -->|No| G["DIVERGES"]
 
-    D -->|p-Series| H{"$p \gt 1$?"}
+    D -->|p-Series| H{"$p\gt 1$?"}
     H -->|Yes| I["CONVERGES"]
     H -->|No| J["DIVERGES"]
 
-    D -->|Telescoping| K["Find partial sums<br/>and evaluate $\lim S_n$"]
+    D -->|Telescoping| K["Find partial sums<br/>and evaluate $\displaystyle\lim_{n\to\infty}S_n$"]
     K --> K1{"Finite limit?"}
-    K1 -->|Yes| K2["CONVERGES<br/>$Sum = \lim S_n$"]
+    K1 -->|Yes| K2["CONVERGES<br/>$\displaystyle\sum a_n=\lim_{n\to\infty}S_n$"]
     K1 -->|No| K3["DIVERGES"]
 
     D -->|No| L{"Are terms<br/>eventually positive?"}
 
-    L -->|Yes| M{"Can you apply<br/>Integral Test? (Continuous, Decreasing, $f(n)=a_n$)"}
+    L -->|Yes| M{"Can you apply<br/>Integral Test?<br/>Positive, continuous,<br/>decreasing $f$, with $f(n)=a_n$"}
     M -->|Yes| N["Evaluate<br/>improper integral"]
     N --> N1{"Integral<br/>converges?"}
     N1 -->|Yes| N2["CONVERGES"]
@@ -122,20 +189,20 @@ flowchart TD
 
     Q --> Q1["Calculate limit $L$"]
     Q1 --> Q2{"What is $L$?"}
-    Q2 -->|L &lt; 1| Q3["ABSOLUTELY<br/>CONVERGENT"]
-    Q2 -->|L &gt; 1| Q4["DIVERGES"]
-    Q2 -->|L = 1| Q5["INCONCLUSIVE<br/>Try another test"]
+    Q2 -->|$L\lt 1$| Q3["ABSOLUTELY<br/>CONVERGENT"]
+    Q2 -->|$L\gt 1$| Q4["DIVERGES"]
+    Q2 -->|$L=1$| Q5["INCONCLUSIVE<br/>Try another test"]
 
     L -->|No| R{"Is the series<br/>alternating?"}
 
-    R -->|Yes| S{"Are $b_n$ decreasing<br/>and $\lim b_n = 0$?"}
+    R -->|Yes| S{"Are $b_n$ decreasing<br/>and $\displaystyle\lim_{n\to\infty}b_n=0$?"}
     S -->|Yes| T["CONVERGES<br/>Alternating Series Test"]
     S -->|No| U["Try another test"]
 
     R -->|No| U
 
-    U --> V["Investigate absolute<br/>convergence: $\displaystyle\sum |a_n|$"]
-    V --> W{"Does $\displaystyle\sum |a_n|$<br/>converge?"}
+    U --> V["Investigate absolute<br/>convergence: $\displaystyle\sum_{n=1}^{\infty}|a_n|$"]
+    V --> W{"Does $\displaystyle\sum_{n=1}^{\infty}|a_n|$<br/>converge?"}
     W -->|Yes| X["ABSOLUTELY<br/>CONVERGENT"]
     W -->|No| Y["Try another test<br/>on $\displaystyle\sum |a_n|$"]
 
@@ -151,12 +218,13 @@ flowchart TD
     classDef inconclusive fill:#e9d5ff,stroke:#9333ea,color:#581c87;
 
     class A start;
-    class B,D,E,H,L,M,O,Q2,K1,L,R,S,W,Z decision;
+    class B,D,E,H,L,M,O,Q2,K1,R,S,W,Z decision;
     class F,I,K2,N2,Q3,T,X,AA converge;
     class C,G,J,K3,N3,Q4,AB diverge;
     class K,N,P,P1,Q1,U,V,Y process;
     class Q5 inconclusive;
 </pre>
+
 </div>
 
 </body>
